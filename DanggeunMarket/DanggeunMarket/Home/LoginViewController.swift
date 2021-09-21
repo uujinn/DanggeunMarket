@@ -44,9 +44,9 @@ class LoginViewController: UIViewController {
     @IBAction func ClickToLogin(_ sender: Any) {
         UserDefaultsKey.isLoggedIn = true
         let vc = storyboard?.instantiateViewController(withIdentifier: "TC") as! UITabBarController
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen 
-        self.present(nav, animated: true, completion: nil)
+
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func viewTapped() {

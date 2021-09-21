@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc = UIViewController()
-
+        
+        print(UserDefaultsKey.isLoggedIn)
         // Login 확인
         if UserDefaultsKey.isLoggedIn {
             vc = storyboard.instantiateViewController(withIdentifier: "TC") as! UITabBarController
