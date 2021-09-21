@@ -15,13 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: scene)
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc = UIViewController()
-        
+
         // Login 확인
         if UserDefaultsKey.isLoggedIn {
-            vc = storyboard.instantiateViewController(withIdentifier: "MainVC") as! ViewController
+            vc = storyboard.instantiateViewController(withIdentifier: "TC") as! UITabBarController
         } else { // 로그인을 하지 않았을경우
             vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
         }

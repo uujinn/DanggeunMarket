@@ -41,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A918F2926FA05DD00C425BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AA89E9E26F8839D009104A8 /* UserDefaultsKey.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A918F2A26FA065E00C425BE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0AA89E8C26F81CB7009104A8 /* ViewController.swift */,
+				0AA89E9C26F88331009104A8 /* LoginViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		0AA89E7C26F81CB7009104A8 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +77,11 @@
 		0AA89E8726F81CB7009104A8 /* DanggeunMarket */ = {
 			isa = PBXGroup;
 			children = (
+				0A918F2A26FA065E00C425BE /* Home */,
+				0A918F2926FA05DD00C425BE /* Model */,
 				0AA89E8826F81CB7009104A8 /* AppDelegate.swift */,
 				0AA89E8A26F81CB7009104A8 /* SceneDelegate.swift */,
-				0AA89E9E26F8839D009104A8 /* UserDefaultsKey.swift */,
-				0AA89E8C26F81CB7009104A8 /* ViewController.swift */,
 				0AA89E8E26F81CB7009104A8 /* Main.storyboard */,
-				0AA89E9C26F88331009104A8 /* LoginViewController.swift */,
 				0AA89E9126F81CB8009104A8 /* Assets.xcassets */,
 				0AA89E9326F81CB8009104A8 /* LaunchScreen.storyboard */,
 				0AA89E9626F81CB8009104A8 /* Info.plist */,

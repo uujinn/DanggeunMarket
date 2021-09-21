@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Custom UIButton
         loginButton.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 61/255, alpha: 1)
         loginButton.layer.cornerRadius = 10
         
@@ -27,15 +28,25 @@ class LoginViewController: UIViewController {
             textField.delegate = self
         }
         
+        // Keyboard 가림 방지
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardAppear), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        // 뷰 누르면 키보드 내려감
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGestureRecognizer.numberOfTapsRequired = 1
         tapGestureRecognizer.isEnabled = true
         scrollView.addGestureRecognizer(tapGestureRecognizer)
 
         
+    }
+    
+    @IBAction func ClickToLogin(_ sender: Any) {
+        UserDefaultsKey.isLoggedIn = true
+        let vc = storyboard?.instantiateViewController(withIdentifier: "TC") as! UITabBarController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen 
+        self.present(nav, animated: true, completion: nil)
     }
     
     @objc func viewTapped() {
@@ -56,7 +67,7 @@ class LoginViewController: UIViewController {
               let userInfo = notification.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {return}
     
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardFrame.height-5, right: 0.0)
         scrollView.contentInset = contentInsets
         scrollView.verticalScrollIndicatorInsets = contentInsets
         let activeRect = activeField.convert(activeField.bounds, to: scrollView)
@@ -68,15 +79,6 @@ class LoginViewController: UIViewController {
                 activatedField.resignFirstResponder()
         }
     }
-    
-    @IBAction func ClickToLogin(_ sender: Any) {
-        UserDefaultsKey.isLoggedIn = true
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MainVC") as! ViewController
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen 
-        self.present(nav, animated: true, completion: nil)
-    }
-    
 }
 
 extension LoginViewController: UITextFieldDelegate {
