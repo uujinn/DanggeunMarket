@@ -23,6 +23,8 @@ class ViewController: UIViewController{
         // simulator를 위한 로그아웃
         UserDefaultsKey.isLoggedIn = false
         
+        dropdownset()
+        
         // location Button
         locationBtn.frame = CGRect(x: -15, y: 0, width: 44, height: 50)
         
