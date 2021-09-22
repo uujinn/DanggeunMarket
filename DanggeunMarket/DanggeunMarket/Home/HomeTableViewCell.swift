@@ -21,7 +21,7 @@ class HomeTableViewCell: UITableViewCell{
         
         productImage.layer.cornerRadius = productImage.frame.width/15
         productImage.clipsToBounds = true
-        print("HomeTableViewCell - awakeFromeNib() called")
+//        print("HomeTableViewCell - awakeFromeNib() called")
         
     }
 }

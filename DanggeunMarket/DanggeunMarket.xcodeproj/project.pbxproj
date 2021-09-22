@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A918F2C26FA19A700C425BE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */; };
 		0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */; };
+		0A918F3026FB0F9900C425BE /* ProductSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2F26FB0F9900C425BE /* ProductSingleton.swift */; };
 		0AA89E8926F81CB7009104A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA89E8826F81CB7009104A8 /* AppDelegate.swift */; };
 		0AA89E8B26F81CB7009104A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA89E8A26F81CB7009104A8 /* SceneDelegate.swift */; };
 		0AA89E8D26F81CB7009104A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA89E8C26F81CB7009104A8 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0A918F2F26FB0F9900C425BE /* ProductSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSingleton.swift; sourceTree = "<group>"; };
 		0AA89E8526F81CB7009104A8 /* DanggeunMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanggeunMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA89E8826F81CB7009104A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AA89E8A26F81CB7009104A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				0AA89E9E26F8839D009104A8 /* UserDefaultsKey.swift */,
+				0A918F2F26FB0F9900C425BE /* ProductSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */,
 				0AA89E9D26F88331009104A8 /* LoginViewController.swift in Sources */,
 				0AA89E8D26F81CB7009104A8 /* ViewController.swift in Sources */,
+				0A918F3026FB0F9900C425BE /* ProductSingleton.swift in Sources */,
 				0AA89E8926F81CB7009104A8 /* AppDelegate.swift in Sources */,
 				0AA89E8B26F81CB7009104A8 /* SceneDelegate.swift in Sources */,
 				0AA89E9F26F8839D009104A8 /* UserDefaultsKey.swift in Sources */,
