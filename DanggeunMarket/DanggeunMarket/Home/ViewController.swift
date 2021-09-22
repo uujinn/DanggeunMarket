@@ -65,6 +65,15 @@ class ViewController: UIViewController{
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPath(for: sender as! UITableViewCell) else{
+            return
+        }
+        
+        
+        
+    }
 
     @IBAction func openDropDown(_ sender: Any) {
         dropDown.show()
@@ -97,5 +106,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
+    
+    
     
 }
