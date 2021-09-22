@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        self.navigationController?.navigationBar.backItem?.titleView?.tintColor = .black
         
         print(index)
         

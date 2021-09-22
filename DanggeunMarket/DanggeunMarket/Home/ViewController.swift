@@ -52,6 +52,11 @@ class ViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailViewController else {return}
+        detailVC.index = tableView.indexPathForSelectedRow!.row
+    }
     
     // Dropdown 구현
     func dropdownset(){
@@ -64,12 +69,12 @@ class ViewController: UIViewController{
         dropDown.cornerRadius = 5
         dropDown.dismissMode = .onTap
         dropDown.dimmedBackgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+//        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
 //            print("선택한 아이템 : \(item)")
 //            print("인덱스 : \(index)")
             
 //            self.dropDown.clearSelection()
-        }
+//        }
     }
 
     @IBAction func openDropDown(_ sender: Any) {
@@ -106,9 +111,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else { return }
-        detailVC.index = indexPath.row
-        self.navigationController!.pushViewController(detailVC, animated: true)
+
+        performSegue(withIdentifier: "showDetail", sender: self)
+//        self.navigationController!.pushViewController(detailVC, animated: true)
     }
     
 }
