@@ -18,6 +18,7 @@
 		0AA89E9526F81CB8009104A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA89E9326F81CB8009104A8 /* LaunchScreen.storyboard */; };
 		0AA89E9D26F88331009104A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA89E9C26F88331009104A8 /* LoginViewController.swift */; };
 		0AA89E9F26F8839D009104A8 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA89E9E26F8839D009104A8 /* UserDefaultsKey.swift */; };
+		DDDC780EA03B1D841937CE69 /* Pods_DanggeunMarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987E342E9BF6018DC77E89F3 /* Pods_DanggeunMarket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		0AA89E9626F81CB8009104A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AA89E9C26F88331009104A8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AA89E9E26F8839D009104A8 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		259D31782A434DF65EFE0245 /* Pods-DanggeunMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanggeunMarket.debug.xcconfig"; path = "Target Support Files/Pods-DanggeunMarket/Pods-DanggeunMarket.debug.xcconfig"; sourceTree = "<group>"; };
+		987E342E9BF6018DC77E89F3 /* Pods_DanggeunMarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanggeunMarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E721CFEC757577C54ECF56EC /* Pods-DanggeunMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanggeunMarket.release.xcconfig"; path = "Target Support Files/Pods-DanggeunMarket/Pods-DanggeunMarket.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDC780EA03B1D841937CE69 /* Pods_DanggeunMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,8 @@
 			children = (
 				0AA89E8726F81CB7009104A8 /* DanggeunMarket */,
 				0AA89E8626F81CB7009104A8 /* Products */,
+				FCC80DBA0C79AE4A68C9B0DC /* Pods */,
+				448808D7ED57B0CB52D296C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +105,24 @@
 			path = DanggeunMarket;
 			sourceTree = "<group>";
 		};
+		448808D7ED57B0CB52D296C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				987E342E9BF6018DC77E89F3 /* Pods_DanggeunMarket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCC80DBA0C79AE4A68C9B0DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				259D31782A434DF65EFE0245 /* Pods-DanggeunMarket.debug.xcconfig */,
+				E721CFEC757577C54ECF56EC /* Pods-DanggeunMarket.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AA89E9926F81CB8009104A8 /* Build configuration list for PBXNativeTarget "DanggeunMarket" */;
 			buildPhases = (
+				0F6062D5CBFA86ED660FA328 /* [CP] Check Pods Manifest.lock */,
 				0AA89E8126F81CB7009104A8 /* Sources */,
 				0AA89E8226F81CB7009104A8 /* Frameworks */,
 				0AA89E8326F81CB7009104A8 /* Resources */,
+				2E389952E3FF0BDA3A168F9B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +190,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F6062D5CBFA86ED660FA328 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DanggeunMarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E389952E3FF0BDA3A168F9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DanggeunMarket/Pods-DanggeunMarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DanggeunMarket/Pods-DanggeunMarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DanggeunMarket/Pods-DanggeunMarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AA89E8126F81CB7009104A8 /* Sources */ = {
@@ -319,6 +388,7 @@
 		};
 		0AA89E9A26F81CB8009104A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 259D31782A434DF65EFE0245 /* Pods-DanggeunMarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,6 +408,7 @@
 		};
 		0AA89E9B26F81CB8009104A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E721CFEC757577C54ECF56EC /* Pods-DanggeunMarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -6,19 +6,25 @@
 //
 
 import UIKit
+import DropDown
 
 class ViewController: UIViewController{
 
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var locationBtn: UIButton!
     
     let p = product.shared
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // simulator를 위한 로그아웃
         UserDefaultsKey.isLoggedIn = false
+        
+        // location Button
+        locationBtn.frame = CGRect(x: -15, y: 0, width: 44, height: 50)
         
         // cell resource 파일 가져오기
         let HomeTableViewCellNib = UINib(nibName: String(describing: HomeTableViewCell.self), bundle: nil)
@@ -27,32 +33,44 @@ class ViewController: UIViewController{
         self.tableView.register(HomeTableViewCellNib, forCellReuseIdentifier: "HomeTableViewCell")
         
         self.tableView.rowHeight = 160
-//        self.tableView.estimatedRowHeight = 200
         
         // 아주 중요
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
+        // 테이블뷰 구분선 통일
+        tableView.separatorInset.right = 20
+        tableView.separatorInset.left = 20
+        
         // addButton UI Custom
         addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
         addButton.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 61/255, alpha: 1)
         addButton.titleLabel?.textColor = .white
-        setupNavigationItems()
+        
+        // Dropdown 구현
+        dropDown.dataSource = ["여의동","형곡1동","내 동네 설정하기"]
+        dropDown.anchorView = locationBtn
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.width = 200
+        dropDown.textColor = UIColor.black
+        dropDown.backgroundColor = UIColor.white
+        dropDown.cornerRadius = 5
+        dropDown.dismissMode = .onTap
+        dropDown.dimmedBackgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+//            print("선택한 아이템 : \(item)")
+//            print("인덱스 : \(index)")
+            
+//            self.dropDown.clearSelection()
+        }
+        
+    }
 
+    @IBAction func openDropDown(_ sender: Any) {
+        dropDown.show()
     }
     
-    // NavigatorBar Custom
-    private func setupNavigationItems() {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "여의동"
-        label.textColor = .black
-        label.textAlignment = .left
-        navigationItem.titleView = label
-        if let navigationBar = navigationController?.navigationBar {
-            label.widthAnchor.constraint(equalTo: navigationBar.widthAnchor, constant: -130).isActive = true
-        }
-    }
+  
 
     @IBAction func clickToSearch(_ sender: Any) {
 //        print("Clicked")
