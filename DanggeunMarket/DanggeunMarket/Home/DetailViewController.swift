@@ -10,17 +10,20 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var profileImg: UIImageView!
-    let index = 0
-    
+    var index = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(index)
+        
         profileImg.layer.cornerRadius = profileImg.frame.height/2
         profileImg.clipsToBounds = true
-        profileImg.layer.borderColor = UIColor.gray
-        profileImg.layer.borderWidth = 1
+
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
 
 }

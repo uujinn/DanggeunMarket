@@ -251,7 +251,7 @@
         <!--Detail View Controller-->
         <scene sceneID="xAz-Mi-j9u">
             <objects>
-                <viewController id="qFj-F0-BF0" customClass="DetailViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qFj-F0-BF0" customClass="DetailViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bi4-1D-OaZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -46,8 +46,15 @@ class ViewController: UIViewController{
         addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
         addButton.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 61/255, alpha: 1)
         addButton.titleLabel?.textColor = .white
-        
-        // Dropdown 구현
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    // Dropdown 구현
+    func dropdownset(){
         dropDown.dataSource = ["여의동","형곡1동","내 동네 설정하기"]
         dropDown.anchorView = locationBtn
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
@@ -63,16 +70,6 @@ class ViewController: UIViewController{
             
 //            self.dropDown.clearSelection()
         }
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath = tableView.indexPath(for: sender as! UITableViewCell) else{
-            return
-        }
-        
-        
-        
     }
 
     @IBAction func openDropDown(_ sender: Any) {
@@ -108,5 +105,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else { return }
+        detailVC.index = indexPath.row
+        self.navigationController!.pushViewController(detailVC, animated: true)
+    }
     
 }
