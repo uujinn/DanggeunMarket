@@ -19,6 +19,8 @@ class HomeTableViewCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        productImage.layer.cornerRadius = productImage.frame.width/15
+        productImage.clipsToBounds = true
         print("HomeTableViewCell - awakeFromeNib() called")
         
     }
