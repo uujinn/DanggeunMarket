@@ -83,7 +83,10 @@ class ViewController: UIViewController{
         dropDown.show()
     }
     
-  
+    @IBAction func clickToadd(_ sender: Any) {
+        performSegue(withIdentifier: "showAdd", sender: self)
+    }
+    
 
     @IBAction func clickToSearch(_ sender: Any) {
 //        print("Clicked")

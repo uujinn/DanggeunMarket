@@ -168,6 +168,9 @@
                                 <state key="normal">
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickToadd:" destination="apa-Qg-1nO" eventType="touchUpInside" id="7ao-iH-DbP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HkI-Sf-gpM"/>
@@ -244,11 +247,62 @@
                         <outlet property="searchButton" destination="Yfv-ds-SGx" id="JUe-GG-75G"/>
                         <outlet property="tableView" destination="xrd-bL-oJr" id="3Gy-tC-tfG"/>
                         <segue destination="qFj-F0-BF0" kind="show" identifier="showDetail" id="nVZ-e7-USc"/>
+                        <segue destination="Awl-gX-evb" kind="show" identifier="showAdd" id="YrA-9e-Jsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HY6-mY-xfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2479.7101449275365" y="-490.17857142857139"/>
+        </scene>
+        <!--중고거래 글쓰기-->
+        <scene sceneID="Zos-5t-V6F">
+            <objects>
+                <viewController id="Awl-gX-evb" customClass="AddViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dKM-9m-ovO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdN-R1-oZQ">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Nf1-ww-JFf"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-Pv-8ls">
+                                <rect key="frame" x="0.0" y="88" width="414" height="734"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Pe4-BJ-WWU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="4Fv-bC-n9D"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZfR-Ph-DWx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gMt-Pv-8ls" firstAttribute="top" secondItem="ZfR-Ph-DWx" secondAttribute="top" id="1NI-bi-4KK"/>
+                            <constraint firstItem="ZfR-Ph-DWx" firstAttribute="trailing" secondItem="gMt-Pv-8ls" secondAttribute="trailing" id="FUt-Oe-Zmu"/>
+                            <constraint firstItem="FdN-R1-oZQ" firstAttribute="top" secondItem="gMt-Pv-8ls" secondAttribute="bottom" id="Wft-4P-dJS"/>
+                            <constraint firstItem="FdN-R1-oZQ" firstAttribute="leading" secondItem="ZfR-Ph-DWx" secondAttribute="leading" id="Xop-iq-Lfy"/>
+                            <constraint firstItem="ZfR-Ph-DWx" firstAttribute="trailing" secondItem="FdN-R1-oZQ" secondAttribute="trailing" id="fSk-1Y-F2K"/>
+                            <constraint firstAttribute="bottom" secondItem="FdN-R1-oZQ" secondAttribute="bottom" id="kWF-bK-hTf"/>
+                            <constraint firstItem="gMt-Pv-8ls" firstAttribute="leading" secondItem="ZfR-Ph-DWx" secondAttribute="leading" id="z0O-pS-OzZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="중고거래 글쓰기" id="44A-P7-NqP">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="7wA-Ck-qF7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jcd-qg-84h">
+                                <rect key="frame" x="302" y="6.5" width="92" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BB-kT-8gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3428.985507246377" y="-56.25"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="xAz-Mi-j9u">
@@ -497,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pih-Le-VWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3302.898550724638" y="-490.51339285714283"/>
+            <point key="canvasLocation" x="3428.985507246377" y="-835.37946428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wfa-WZ-oPz">
@@ -558,11 +612,17 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

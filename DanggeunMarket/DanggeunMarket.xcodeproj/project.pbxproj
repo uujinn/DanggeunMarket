@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82899D26FC7D130097D566 /* AddViewController.swift */; };
 		0A918F2C26FA19A700C425BE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */; };
 		0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */; };
 		0A918F3026FB0F9900C425BE /* ProductSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2F26FB0F9900C425BE /* ProductSingleton.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A82899D26FC7D130097D566 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0A918F2F26FB0F9900C425BE /* ProductSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSingleton.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				0A918F3126FB2CF100C425BE /* DetailViewController.swift */,
 				0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */,
 				0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */,
+				0A82899D26FC7D130097D566 /* AddViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */,
 				0AA89E9D26F88331009104A8 /* LoginViewController.swift in Sources */,
+				0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */,
 				0AA89E8D26F81CB7009104A8 /* ViewController.swift in Sources */,
 				0A918F3026FB0F9900C425BE /* ProductSingleton.swift in Sources */,
 				0AA89E8926F81CB7009104A8 /* AppDelegate.swift in Sources */,
