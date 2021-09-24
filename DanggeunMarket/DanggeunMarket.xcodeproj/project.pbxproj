@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A5A04C926FE2F54007CD70F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A04C826FE2F54007CD70F /* CategoryTableViewController.swift */; };
 		0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82899D26FC7D130097D566 /* AddViewController.swift */; };
 		0A918F2C26FA19A700C425BE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */; };
 		0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A5A04C826FE2F54007CD70F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		0A82899D26FC7D130097D566 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				0AA89E8826F81CB7009104A8 /* AppDelegate.swift */,
 				0AA89E8A26F81CB7009104A8 /* SceneDelegate.swift */,
 				0AA89E8E26F81CB7009104A8 /* Main.storyboard */,
+				0A5A04C826FE2F54007CD70F /* CategoryTableViewController.swift */,
 				0AA89E9126F81CB8009104A8 /* Assets.xcassets */,
 				0AA89E9326F81CB8009104A8 /* LaunchScreen.storyboard */,
 				0AA89E9626F81CB8009104A8 /* Info.plist */,
@@ -250,6 +253,7 @@
 				0A918F3026FB0F9900C425BE /* ProductSingleton.swift in Sources */,
 				0AA89E8926F81CB7009104A8 /* AppDelegate.swift in Sources */,
 				0AA89E8B26F81CB7009104A8 /* SceneDelegate.swift in Sources */,
+				0A5A04C926FE2F54007CD70F /* CategoryTableViewController.swift in Sources */,
 				0AA89E9F26F8839D009104A8 /* UserDefaultsKey.swift in Sources */,
 				0A918F3226FB2CF100C425BE /* DetailViewController.swift in Sources */,
 			);

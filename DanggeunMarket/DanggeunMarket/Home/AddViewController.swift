@@ -16,6 +16,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var infoTextField: UITextView!
     
     let p = product.shared
+    var cate: String = "카테고리 선택"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,13 @@ class AddViewController: UIViewController, UITextViewDelegate{
         
         textViewCustom(tv: infoTextField)
             
-        
+    
         placeholderSetting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        print(cate)
     }
     
     // 완료 버튼
@@ -42,6 +44,10 @@ class AddViewController: UIViewController, UITextViewDelegate{
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func clickToCategory(_ sender: Any) {
+        let TC = self.storyboard?.instantiateViewController(withIdentifier: "CategoryTC")
+        self.navigationController?.pushViewController(TC!, animated: true)
+    }
     
     // Placeholder 설정
     func placeholderSetting() {

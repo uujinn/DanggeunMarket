@@ -257,7 +257,7 @@
         <!--중고거래 글쓰기-->
         <scene sceneID="Zos-5t-V6F">
             <objects>
-                <viewController id="Awl-gX-evb" customClass="AddViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Awl-gX-evb" customClass="AddViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dKM-9m-ovO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,6 +325,9 @@
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="카테고리 선택"/>
+                                                                <connections>
+                                                                    <action selector="clickToCategory:" destination="Awl-gX-evb" eventType="touchUpInside" id="D1z-oZ-jhy"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmt-Nr-8t7">
                                                                 <rect key="frame" x="383" y="24.5" width="11" height="21"/>
@@ -437,6 +440,35 @@
             </objects>
             <point key="canvasLocation" x="3427.5362318840585" y="-67.633928571428569"/>
         </scene>
+        <!--카테고리 선택-->
+        <scene sceneID="UEw-eC-ipH">
+            <objects>
+                <tableViewController storyboardIdentifier="CategoryTC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JIc-Gx-siP" customClass="CategoryTableViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="iiK-64-bYs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="8i6-wX-sOw">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8i6-wX-sOw" id="dPO-d5-Gyv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JIc-Gx-siP" id="EaY-qC-h8x"/>
+                            <outlet property="delegate" destination="JIc-Gx-siP" id="EO2-lZ-INp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="카테고리 선택" id="Ahk-bW-2uJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xd-Ys-Qct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4254" y="-92"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="xAz-Mi-j9u">
             <objects>
@@ -516,18 +548,33 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깨끗해요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0Z-do-DiY">
-                                                                <rect key="frame" x="20" y="79" width="60" height="19.5"/>
+                                                                <rect key="frame" x="20" y="100" width="60" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq0-Dn-rsf">
+                                                                <rect key="frame" x="20" y="64" width="61" height="16"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="디지털기기">
+                                                                        <attributes>
+                                                                            <color key="NSColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                            <integer key="NSUnderline" value="1"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="qq0-Dn-rsf" firstAttribute="top" secondItem="bYO-Mt-YNu" secondAttribute="bottom" constant="20" id="MO5-U9-sS5"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bYO-Mt-YNu" secondAttribute="trailing" constant="20" id="TO8-9u-mnx"/>
                                                             <constraint firstItem="bYO-Mt-YNu" firstAttribute="top" secondItem="8ea-jr-LRX" secondAttribute="top" constant="20" id="Y4K-gr-Xju"/>
                                                             <constraint firstItem="bYO-Mt-YNu" firstAttribute="leading" secondItem="8ea-jr-LRX" secondAttribute="leading" constant="20" id="Ydt-UP-M63"/>
-                                                            <constraint firstItem="o0Z-do-DiY" firstAttribute="top" secondItem="bYO-Mt-YNu" secondAttribute="bottom" constant="35" id="jX3-zg-ueF"/>
+                                                            <constraint firstItem="qq0-Dn-rsf" firstAttribute="leading" secondItem="bYO-Mt-YNu" secondAttribute="leading" id="dDg-Ql-pGw"/>
+                                                            <constraint firstItem="o0Z-do-DiY" firstAttribute="top" secondItem="qq0-Dn-rsf" secondAttribute="bottom" constant="20" id="jX3-zg-ueF"/>
                                                             <constraint firstItem="o0Z-do-DiY" firstAttribute="leading" secondItem="bYO-Mt-YNu" secondAttribute="leading" id="sWd-pn-hra"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o0Z-do-DiY" secondAttribute="trailing" constant="20" id="vAJ-AP-wjw"/>
                                                         </constraints>
@@ -671,6 +718,7 @@
                     <size key="freeformSize" width="414" height="1199"/>
                     <connections>
                         <outlet property="bottomView" destination="8ky-Fp-uyu" id="D6V-3z-7i6"/>
+                        <outlet property="categoryLabel" destination="qq0-Dn-rsf" id="Vaz-Xv-rXM"/>
                         <outlet property="chatButton" destination="EJ7-o1-GWQ" id="Tzf-70-7P9"/>
                         <outlet property="idLabel" destination="OfP-cm-5gP" id="PaB-mK-bgd"/>
                         <outlet property="infoLabel" destination="o0Z-do-DiY" id="9fw-Ik-OOr"/>

@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
@@ -75,6 +76,7 @@ class DetailViewController: UIViewController {
         idLabel.text = p.productArray[index].id
         locationLabel.text = p.productArray[index].location
         titleLabel.text = p.productArray[index].productTitle
+        categoryLabel.text = p.productArray[index].category
         infoLabel.text = p.productArray[index].info
         priceLabel.text = "\(p.productArray[index].price)원"
     }
