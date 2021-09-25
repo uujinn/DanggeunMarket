@@ -48,11 +48,18 @@ class ViewController: UIViewController{
         addButton.layer.cornerRadius = 0.5 * addButton.bounds.size.width
         addButton.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 61/255, alpha: 1)
         addButton.titleLabel?.textColor = .white
+        
+
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(p.productArray[0])
+        tableView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

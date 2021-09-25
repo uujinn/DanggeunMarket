@@ -16,8 +16,11 @@ class AddViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var infoTextField: UITextView!
     
+    let location = "여의동"
+    let userID = "user"
     let p = product.shared
     var cate: String = "카테고리 선택"
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +30,15 @@ class AddViewController: UIViewController, UITextViewDelegate{
 
         priceTextField.addLeftPadding()
         titleTextField.addLeftPadding()
-        
+
+        buttonCustom(btn: albumBtn)
         textViewCustom(tv: infoTextField)
         placeholderSetting()
+        
+        // imagepicker 속성 지정
+        self.imagePicker.sourceType = .photoLibrary // 앨범에서 가져옴
+        self.imagePicker.allowsEditing = true // 수정 가능 여부
+        self.imagePicker.delegate = self // picker delegate
         
      
     }
@@ -45,12 +54,20 @@ class AddViewController: UIViewController, UITextViewDelegate{
 
     }
     
+    // 사진 선택 버튼
+    @IBAction func clickToSelectPhoto(_ sender: Any) {
+        self.present(self.imagePicker, animated: true)
+    }
+    
+    
     // 완료 버튼
     @IBAction func completedAdd(_ sender: Any) {
-        print("goback")
+        p.productArray.insert(productInfo(id: userID, productImage: productImg.image!, productTitle: titleTextField.text ?? "0", price: Int(priceTextField.text!)!, location: location, info: infoTextField.text, category: cate), at: 0)
+    
         self.navigationController?.popViewController(animated: true)
     }
     
+    // 카테고리 선택
     @IBAction func clickToCategory(_ sender: Any) {
         guard let cvc = self.storyboard?.instantiateViewController(identifier: "CVC") as? CategoryViewController else { return }
         cvc.completioHandler = {
@@ -107,8 +124,8 @@ class AddViewController: UIViewController, UITextViewDelegate{
     }
     
     func buttonCustom(btn: UIButton){
-        btn.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2).cgColor
-        btn.layer.borderWidth = 0.3
+        btn.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
+        btn.layer.borderWidth = 0.5
         btn.layer.cornerRadius = 5
     }
 }
@@ -119,4 +136,23 @@ extension UITextField {
     self.leftView = paddingView
     self.leftViewMode = ViewMode.always
   }
+}
+
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        var newImage: UIImage? = nil // update 할 이미지
+        
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = possibleImage // 수정된 이미지가 있을 경우
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = possibleImage // 원본 이미지가 있을 경우
+        }
+        
+        self.productImg.image = newImage // 받아온 이미지를 update
+        
+        picker.dismiss(animated: true, completion: nil) // picker를 닫아줌
+        
+    }
 }
