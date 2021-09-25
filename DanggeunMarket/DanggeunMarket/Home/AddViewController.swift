@@ -16,8 +16,8 @@ class AddViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var infoTextField: UITextView!
     
-    let location = "여의동"
-    let userID = "user"
+    let location = UserDefaults.standard.value(forKey: "Location") as! String
+    let userID = UserDefaults.standard.value(forKey: "ID") as! String
     let p = product.shared
     var cate: String = "카테고리 선택"
     let imagePicker = UIImagePickerController()

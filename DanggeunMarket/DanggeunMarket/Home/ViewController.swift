@@ -22,11 +22,11 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // simulator를 위한 로그아웃
         UserDefaultsKey.isLoggedIn = false
-        
+
         dropdownset()
         
         // location Button
-        locationBtn.frame = CGRect(x: -15, y: 0, width: 44, height: 50)
+        locationBtn.frame = CGRect(x: 0, y: 0, width: 70, height: 50)
         
         // cell resource 파일 가져오기
         let HomeTableViewCellNib = UINib(nibName: String(describing: HomeTableViewCell.self), bundle: nil)
@@ -57,10 +57,12 @@ class ViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        print("viewwillAppear")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         print(p.productArray[0])
+        print("viewDidAppear")
 //        tableView.reloadData()
     }
 
@@ -89,12 +91,13 @@ class ViewController: UIViewController{
         dropDown.cornerRadius = 5
         dropDown.dismissMode = .onTap
         dropDown.dimmedBackgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-//        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-//            print("선택한 아이템 : \(item)")
-//            print("인덱스 : \(index)")
-            
-//            self.dropDown.clearSelection()
-//        }
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("선택한 아이템 : \(item)")
+            print("인덱스 : \(index)")
+            locationBtn.setTitle("\(item)", for: .normal)
+            self.dropDown.clearSelection()
+            UserDefaults.standard.set("\(item)", forKey: "Location")
+        }
     }
 
     @IBAction func openDropDown(_ sender: Any) {

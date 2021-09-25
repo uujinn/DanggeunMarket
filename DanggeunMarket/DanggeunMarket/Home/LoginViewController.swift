@@ -41,6 +41,10 @@ class LoginViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(idTextField.text, forKey: "ID")
+    }
+    
     @IBAction func ClickToLogin(_ sender: Any) {
         UserDefaultsKey.isLoggedIn = true
         let vc = storyboard?.instantiateViewController(withIdentifier: "TC") as! UITabBarController
