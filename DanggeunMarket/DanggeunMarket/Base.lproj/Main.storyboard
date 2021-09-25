@@ -324,7 +324,6 @@
                                                                 <rect key="frame" x="20" y="0.0" width="394" height="70"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="카테고리 선택"/>
                                                                 <connections>
                                                                     <action selector="clickToCategory:" destination="Awl-gX-evb" eventType="touchUpInside" id="D1z-oZ-jhy"/>
                                                                 </connections>
@@ -430,6 +429,7 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="albumBtn" destination="3BP-hZ-Ojl" id="FsL-Qd-8Ef"/>
+                        <outlet property="categoryBtn" destination="6ff-08-vo1" id="EiK-nC-Syp"/>
                         <outlet property="infoTextField" destination="IHe-iR-DQd" id="3r2-aa-yGd"/>
                         <outlet property="priceTextField" destination="CcA-8V-q6Z" id="2Tt-dC-HiT"/>
                         <outlet property="productImg" destination="gWN-U0-NUW" id="NB5-vL-rJZ"/>
@@ -441,33 +441,55 @@
             <point key="canvasLocation" x="3427.5362318840585" y="-67.633928571428569"/>
         </scene>
         <!--카테고리 선택-->
-        <scene sceneID="UEw-eC-ipH">
+        <scene sceneID="lLQ-0y-LN7">
             <objects>
-                <tableViewController storyboardIdentifier="CategoryTC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JIc-Gx-siP" customClass="CategoryTableViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="iiK-64-bYs">
+                <viewController storyboardIdentifier="CVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l1D-p9-4wm" customClass="CategoryViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nuN-UJ-Xtd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Owk-1o-q6E">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="pct-8p-IjK" style="IBUITableViewCellStyleDefault" id="GgZ-Er-zGn">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GgZ-Er-zGn" id="64s-5Q-3bf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pct-8p-IjK">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l1D-p9-4wm" id="pbm-dW-mGc"/>
+                                    <outlet property="delegate" destination="l1D-p9-4wm" id="3jy-DY-Wv6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bIr-12-w68"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="8i6-wX-sOw">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8i6-wX-sOw" id="dPO-d5-Gyv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JIc-Gx-siP" id="EaY-qC-h8x"/>
-                            <outlet property="delegate" destination="JIc-Gx-siP" id="EO2-lZ-INp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="카테고리 선택" id="Ahk-bW-2uJ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Xd-Ys-Qct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="bIr-12-w68" firstAttribute="trailing" secondItem="Owk-1o-q6E" secondAttribute="trailing" id="2wU-8Z-Yzn"/>
+                            <constraint firstItem="Owk-1o-q6E" firstAttribute="top" secondItem="bIr-12-w68" secondAttribute="top" id="DPp-zO-nLC"/>
+                            <constraint firstItem="bIr-12-w68" firstAttribute="bottom" secondItem="Owk-1o-q6E" secondAttribute="bottom" id="b6B-Pz-vh3"/>
+                            <constraint firstItem="Owk-1o-q6E" firstAttribute="leading" secondItem="bIr-12-w68" secondAttribute="leading" id="s8F-Nb-ylM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="카테고리 선택" id="6yX-S4-WSn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZp-Xg-aJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4254" y="-92"/>
+            <point key="canvasLocation" x="4296" y="-67"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="xAz-Mi-j9u">

@@ -13,6 +13,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var albumBtn: UIButton!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var productImg: UIImageView!
+    @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var infoTextField: UITextView!
     
     let p = product.shared
@@ -28,14 +29,20 @@ class AddViewController: UIViewController, UITextViewDelegate{
         titleTextField.addLeftPadding()
         
         textViewCustom(tv: infoTextField)
-            
-    
         placeholderSetting()
+        
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-        print(cate)
+        print("viewwillAppear() \(cate)")
+        categoryBtn.setTitle(cate, for: .normal)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(categoryBtn.titleLabel?.text ?? " ")
+
     }
     
     // 완료 버튼
@@ -45,10 +52,17 @@ class AddViewController: UIViewController, UITextViewDelegate{
     }
     
     @IBAction func clickToCategory(_ sender: Any) {
-        let TC = self.storyboard?.instantiateViewController(withIdentifier: "CategoryTC")
-        self.navigationController?.pushViewController(TC!, animated: true)
+        guard let cvc = self.storyboard?.instantiateViewController(identifier: "CVC") as? CategoryViewController else { return }
+        cvc.completioHandler = {
+            msg in
+//            print("messgae : \(msg)")
+            self.cate = msg
+
+        }
+        self.navigationController?.pushViewController(cvc, animated: true)
     }
     
+
     // Placeholder 설정
     func placeholderSetting() {
  
