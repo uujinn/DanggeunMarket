@@ -49,7 +49,9 @@ class ViewController: UIViewController{
         addButton.backgroundColor = UIColor(red: 255/255, green: 138/255, blue: 61/255, alpha: 1)
         addButton.titleLabel?.textColor = .white
         
-
+        // refreshControl()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
 
     }
     
@@ -59,12 +61,21 @@ class ViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         print(p.productArray[0])
-        tableView.reloadData()
+//        tableView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailViewController else {return}
         detailVC.index = tableView.indexPathForSelectedRow!.row
+    }
+    
+    @objc private func didPullToRefresh(){
+        print("start refresh")
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
     
     // Dropdown 구현
