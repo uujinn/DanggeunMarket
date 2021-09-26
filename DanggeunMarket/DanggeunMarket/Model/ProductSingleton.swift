@@ -29,6 +29,7 @@ class product {
         productInfo(id: "영화보러갈꺼야", productImage: UIImage(named: "key.jpg")! , productTitle: "로지텍 블루투스 키보드 k480" , price: 20000, location: "동작구 신대방제1동", info: "이틀사용했고 이상없습니다.\n상품을 직접 보시고 거래하는게 좋을 것 같아서 직거래를 선호합니다. 혹시 보고 마음에 안드시면 구매하지 않으셔도 됩니다~", category: "디지털기기")
     ]
     
+    
 }
 
 

@@ -7,11 +7,25 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController{
+    
 
     @IBOutlet weak var tableView: UITableView!
     
     let p = product.shared
+    var filteredArr: [String] = []
+    var titleArr: [String] = []
+    var imgArr: [UIImage] = []
+    var locationArr: [String] = []
+    var priceArr: [Int] = []
+    var idx = 0
+    
+    var isFiltering: Bool {
+        let searchController = self.navigationItem.searchController
+        let isActive = searchController?.isActive ?? false
+        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
+        return isActive && isSearchBarHasText
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +45,13 @@ class SearchViewController: UIViewController {
         tableView.separatorInset.right = 20
         tableView.separatorInset.left = 20
 
+        for i in 0..<p.productArray.count{
+            titleArr.append(p.productArray[i].productTitle)
+            imgArr.append(p.productArray[i].productImage)
+            locationArr.append(p.productArray[i].location)
+            priceArr.append(p.productArray[i].price)
+        }
+        
         setupSearchController()
         
     }
@@ -45,34 +66,55 @@ class SearchViewController: UIViewController {
         searchController.searchBar.placeholder = "원하시는 상품을 검색해보세요."
         searchController.hidesNavigationBarDuringPresentation = false
         
+        searchController.searchResultsUpdater = self
+        
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "근처에서 검색"
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 
 }
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
+
+extension SearchViewController: UISearchResultsUpdating {
     
-    // 테이블 뷰 셀의 갯수
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        self.filteredArr = self.titleArr.filter { $0.lowercased().contains(text) }
+        self.tableView.reloadData()
+    }
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return p.productArray.count
+//        return self.arr.count
+        return self.isFiltering ? self.filteredArr.count : self.titleArr.count
     }
     
-    // 각 셀에 대한 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         
-        cell.productImage.image = p.productArray[indexPath.row].productImage
-        cell.productTitleLabel.text = p.productArray[indexPath.row].productTitle
-        cell.locationLabel.text = p.productArray[indexPath.row].location
-        cell.priceLabel.text = "\(p.productArray[indexPath.row].price)원"
-        
+        if self.isFiltering{
+            cell.productTitleLabel.text = filteredArr[indexPath.row]
+            for i in 0..<titleArr.count{
+                if titleArr[i] == filteredArr[indexPath.row]{
+                    idx = i
+                }
+            }
+            cell.productImage.image = imgArr[idx]
+            cell.locationLabel.text = locationArr[idx]
+            cell.priceLabel.text = "\(priceArr[idx])원"
+        }else{
+            cell.productImage.image = p.productArray[indexPath.row].productImage
+            cell.productTitleLabel.text = p.productArray[indexPath.row].productTitle
+            cell.locationLabel.text = p.productArray[indexPath.row].location
+            cell.priceLabel.text = "\(p.productArray[indexPath.row].price)원"
+        }
+
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showSearch", sender: self)
     }
-    
 }
