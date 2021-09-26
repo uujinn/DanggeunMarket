@@ -33,13 +33,16 @@ class AddViewController: UIViewController, UITextViewDelegate{
 
         buttonCustom(btn: albumBtn)
         textViewCustom(tv: infoTextField)
-        placeholderSetting()
         
         // imagepicker 속성 지정
         self.imagePicker.sourceType = .photoLibrary // 앨범에서 가져옴
         self.imagePicker.allowsEditing = true // 수정 가능 여부
         self.imagePicker.delegate = self // picker delegate
         
+        placeholderSetting()
+        
+        // info 행간
+        makeSpace(tf: infoTextField)
      
     }
     
@@ -82,7 +85,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
 
     // Placeholder 설정
     func placeholderSetting() {
- 
+
         infoTextField.delegate = self
         infoTextField.text = "여의동에 올릴 게시글 내용을 작성해주세요.(가품 및 판매금지품목은 게시가 제한될 수 있어요."
         infoTextField.textColor = UIColor.lightGray
@@ -110,6 +113,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
 
     }
     
+
     func textViewCustom(tv: UITextView){
         // 텍스트뷰 배경 white로 고정
         tv.backgroundColor = UIColor.white
@@ -127,6 +131,17 @@ class AddViewController: UIViewController, UITextViewDelegate{
         btn.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
         btn.layer.borderWidth = 0.5
         btn.layer.cornerRadius = 5
+    }
+    
+    func makeSpace(tf: UITextView){
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+            .foregroundColor: UIColor.lightGray,
+            .paragraphStyle: style
+        ]
+        tf.attributedText = NSAttributedString(string: infoTextField.text, attributes: attributes)
     }
 }
 

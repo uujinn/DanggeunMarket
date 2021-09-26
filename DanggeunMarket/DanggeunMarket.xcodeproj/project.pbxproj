@@ -75,6 +75,7 @@
 				0A918F3126FB2CF100C425BE /* DetailViewController.swift */,
 				0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */,
 				0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */,
+				0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */,
 				0A82899D26FC7D130097D566 /* AddViewController.swift */,
 			);
 			path = Home;
@@ -106,7 +107,6 @@
 				0AA89E8826F81CB7009104A8 /* AppDelegate.swift */,
 				0AA89E8A26F81CB7009104A8 /* SceneDelegate.swift */,
 				0AA89E8E26F81CB7009104A8 /* Main.storyboard */,
-				0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */,
 				0AA89E9126F81CB8009104A8 /* Assets.xcassets */,
 				0AA89E9326F81CB8009104A8 /* LaunchScreen.storyboard */,
 				0AA89E9626F81CB8009104A8 /* Info.plist */,

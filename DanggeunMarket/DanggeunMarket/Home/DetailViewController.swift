@@ -61,6 +61,7 @@ class DetailViewController: UIViewController {
             paragraphStyle.lineBreakStrategy = .hangulWordPriority
         }
                 
+        // infoLabel 자간 적용 및 custom
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
             .foregroundColor: UIColor.black,

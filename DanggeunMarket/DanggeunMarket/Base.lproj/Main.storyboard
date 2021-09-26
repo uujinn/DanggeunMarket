@@ -317,7 +317,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="WyQ-wT-b8z"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zx-3O-1Wm">
@@ -325,7 +325,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-08-vo1">
                                                                 <rect key="frame" x="20" y="0.0" width="394" height="70"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="clickToCategory:" destination="Awl-gX-evb" eventType="touchUpInside" id="D1z-oZ-jhy"/>
@@ -359,7 +359,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="gfB-ks-IiY"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IHe-iR-DQd">
@@ -441,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BB-kT-8gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3427.5362318840585" y="-67.633928571428569"/>
+            <point key="canvasLocation" x="3500" y="-15"/>
         </scene>
         <!--카테고리 선택-->
         <scene sceneID="lLQ-0y-LN7">
@@ -468,7 +468,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
                                                             <attributes>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
+                                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -762,7 +762,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pih-Le-VWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3428.985507246377" y="-835.37946428571422"/>
+            <point key="canvasLocation" x="3501" y="-833"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wfa-WZ-oPz">

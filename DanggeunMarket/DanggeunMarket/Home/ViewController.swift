@@ -53,6 +53,7 @@ class ViewController: UIViewController{
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
 
+        UserDefaults.standard.set("여의동", forKey: "Location")
     }
     
     override func viewWillAppear(_ animated: Bool) {
