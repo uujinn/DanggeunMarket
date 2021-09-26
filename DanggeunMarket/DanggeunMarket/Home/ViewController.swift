@@ -111,9 +111,9 @@ class ViewController: UIViewController{
     
 
     @IBAction func clickToSearch(_ sender: Any) {
-//        print("Clicked")
-//        p.productArray.insert(productInfo(id: "민", productImage: UIImage(named: "xs.jpeg")! , productTitle: "아이폰 XS 64GB 스페이스 그레이 팔아요" , price: 320000, location: "양평동", info: "연락주세요.", date: "21년 9월 20일 2시 25분 55초"),at: 0)
-//        tableView.reloadData()
+        guard let svc = self.storyboard?.instantiateViewController(identifier: "SVC") as? SearchViewController else { return }
+        self.navigationController?.pushViewController(svc, animated: true)
+
     }
 }
 

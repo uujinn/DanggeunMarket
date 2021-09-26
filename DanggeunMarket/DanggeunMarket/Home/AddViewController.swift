@@ -48,7 +48,6 @@ class AddViewController: UIViewController, UITextViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-        print("viewwillAppear() \(cate)")
         categoryBtn.setTitle(cate, for: .normal)
     }
     

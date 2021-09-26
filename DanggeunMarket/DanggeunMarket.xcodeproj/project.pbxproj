@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A5A04CB26FECC0C007CD70F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */; };
+		0A5A04E027006846007CD70F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A04DF27006846007CD70F /* SearchViewController.swift */; };
 		0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82899D26FC7D130097D566 /* AddViewController.swift */; };
 		0A918F2C26FA19A700C425BE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */; };
 		0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		0A5A04DF27006846007CD70F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0A82899D26FC7D130097D566 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				0AA89E9C26F88331009104A8 /* LoginViewController.swift */,
 				0A918F3126FB2CF100C425BE /* DetailViewController.swift */,
 				0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */,
+				0A5A04DF27006846007CD70F /* SearchViewController.swift */,
 				0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */,
 				0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */,
 				0A82899D26FC7D130097D566 /* AddViewController.swift */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A5A04CB26FECC0C007CD70F /* CategoryViewController.swift in Sources */,
+				0A5A04E027006846007CD70F /* SearchViewController.swift in Sources */,
 				0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */,
 				0AA89E9D26F88331009104A8 /* LoginViewController.swift in Sources */,
 				0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */,

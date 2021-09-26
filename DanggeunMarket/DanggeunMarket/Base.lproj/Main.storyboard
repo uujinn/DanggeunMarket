@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dbD-re-NGd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Msu-Ks-yI2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HY6-mY-xfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2479.7101449275365" y="-490.17857142857139"/>
+            <point key="canvasLocation" x="2491" y="-490"/>
         </scene>
         <!--중고거래 글쓰기-->
         <scene sceneID="Zos-5t-V6F">
@@ -499,16 +499,47 @@
             </objects>
             <point key="canvasLocation" x="4296" y="-67"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="7Kl-m6-hHR">
+            <objects>
+                <viewController storyboardIdentifier="SVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qtL-3M-oZl" customClass="SearchViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fLY-aJ-pWW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WBs-nx-6tV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2SO-Ay-tmX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WBs-nx-6tV" firstAttribute="top" secondItem="2SO-Ay-tmX" secondAttribute="top" id="2C8-6M-Clp"/>
+                            <constraint firstItem="2SO-Ay-tmX" firstAttribute="bottom" secondItem="WBs-nx-6tV" secondAttribute="bottom" id="UmK-1E-oy3"/>
+                            <constraint firstAttribute="trailing" secondItem="WBs-nx-6tV" secondAttribute="trailing" id="lpp-er-dXv"/>
+                            <constraint firstItem="WBs-nx-6tV" firstAttribute="leading" secondItem="2SO-Ay-tmX" secondAttribute="leading" id="xxI-Rw-NQ6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="WBs-nx-6tV" id="qnM-RT-VNj"/>
+                        <segue destination="qFj-F0-BF0" kind="show" identifier="showSearch" id="9YI-Oy-w2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLQ-RK-YLE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2490" y="-1172"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="xAz-Mi-j9u">
             <objects>
                 <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qFj-F0-BF0" customClass="DetailViewController" customModule="DanggeunMarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bi4-1D-OaZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1199"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1145"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXq-BG-pIE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1021"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1055"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upl-uK-Ymw">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
@@ -667,7 +698,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="UVD-mj-gBv"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-fw-Jr8">
-                                <rect key="frame" x="0.0" y="1109" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="1055" width="414" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWB-AD-zWJ">
                                         <rect key="frame" x="20" y="20" width="20.5" height="22"/>
@@ -806,6 +837,9 @@
             <point key="canvasLocation" x="1569.5652173913045" y="-490.17857142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9YI-Oy-w2y"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Danggeun" width="1000" height="1101"/>
