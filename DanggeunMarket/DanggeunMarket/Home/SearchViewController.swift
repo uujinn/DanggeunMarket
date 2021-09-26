@@ -58,7 +58,16 @@ class SearchViewController: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailViewController else {return}
-        detailVC.index = tableView.indexPathForSelectedRow!.row
+        for i in 0..<titleArr.count{
+            if self.isFiltering && titleArr[i] == filteredArr[tableView.indexPathForSelectedRow!.row]{ // 검색한 상태
+                idx = i
+                print(i)
+            } else if !self.isFiltering{ // 검색 안한 상태
+                idx = tableView.indexPathForSelectedRow!.row
+            }
+        }
+        print("idx: \(idx)")
+        detailVC.index = idx
     }
     
     func setupSearchController() {
@@ -69,7 +78,7 @@ class SearchViewController: UIViewController{
         searchController.searchResultsUpdater = self
         
         self.navigationItem.searchController = searchController
-        self.navigationItem.title = "근처에서 검색"
+        self.navigationItem.title = "검색"
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 
