@@ -81,5 +81,24 @@ class DetailViewController: UIViewController {
         infoLabel.text = p.productArray[index].info
         priceLabel.text = "\(p.productArray[index].price)원"
     }
+    @IBAction func clickActionSheet(_ sender: Any) {
+        showAlert(style: .actionSheet)
+    }
     
+    func showAlert(style: UIAlertController.Style){
+        let alert = UIAlertController()
+        let modify = UIAlertAction(title: "수정",style:.default) { (action) in
+            print("수정")
+        }
+        let delete = UIAlertAction(title:"삭제",style: .destructive) {
+            (action) in
+            print("삭제")
+            
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(modify)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated:  true, completion: nil)    }
 }

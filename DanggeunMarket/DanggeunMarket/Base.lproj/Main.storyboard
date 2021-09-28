@@ -772,7 +772,11 @@
                     <navigationItem key="navigationItem" id="sh6-AT-Xn9">
                         <barButtonItem key="backBarButtonItem" title="Home" id="HyZ-at-0KY"/>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="ellipsis" catalog="system" id="WR6-Hy-KKb"/>
+                            <barButtonItem title="Item" image="ellipsis" catalog="system" id="WR6-Hy-KKb">
+                                <connections>
+                                    <action selector="clickActionSheet:" destination="qFj-F0-BF0" id="Xh7-dn-hvc"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="hc6-5R-yAz"/>
                         </rightBarButtonItems>
                     </navigationItem>
