@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A5A04CB26FECC0C007CD70F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */; };
 		0A5A04E027006846007CD70F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A04DF27006846007CD70F /* SearchViewController.swift */; };
+		0A5A04F827036C82007CD70F /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 0A5A04F727036C82007CD70F /* SkeletonView */; };
+		0A5A04FA27036DCA007CD70F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A04F927036DCA007CD70F /* LocationViewController.swift */; };
 		0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82899D26FC7D130097D566 /* AddViewController.swift */; };
 		0A918F2C26FA19A700C425BE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */; };
 		0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */; };
@@ -28,6 +30,7 @@
 /* Begin PBXFileReference section */
 		0A5A04CA26FECC0C007CD70F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		0A5A04DF27006846007CD70F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0A5A04F927036DCA007CD70F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		0A82899D26FC7D130097D566 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		0A918F2B26FA19A700C425BE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		0A918F2D26FA274900C425BE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5A04F827036C82007CD70F /* SkeletonView in Frameworks */,
 				DDDC780EA03B1D841937CE69 /* Pods_DanggeunMarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A5A04FB27036DD3007CD70F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0A5A04F927036DCA007CD70F /* LocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		0A918F2926FA05DD00C425BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				0A918F2A26FA065E00C425BE /* Home */,
+				0A5A04FB27036DD3007CD70F /* Location */,
 				0A918F2926FA05DD00C425BE /* Model */,
 				0AA89E8826F81CB7009104A8 /* AppDelegate.swift */,
 				0AA89E8A26F81CB7009104A8 /* SceneDelegate.swift */,
@@ -152,6 +165,9 @@
 			dependencies = (
 			);
 			name = DanggeunMarket;
+			packageProductDependencies = (
+				0A5A04F727036C82007CD70F /* SkeletonView */,
+			);
 			productName = DanggeunMarket;
 			productReference = 0AA89E8526F81CB7009104A8 /* DanggeunMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 0AA89E7C26F81CB7009104A8;
+			packageReferences = (
+				0A5A04F627036C82007CD70F /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = 0AA89E8626F81CB7009104A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +271,7 @@
 				0A5A04CB26FECC0C007CD70F /* CategoryViewController.swift in Sources */,
 				0A5A04E027006846007CD70F /* SearchViewController.swift in Sources */,
 				0A918F2E26FA274900C425BE /* HomeTableViewCell.swift in Sources */,
+				0A5A04FA27036DCA007CD70F /* LocationViewController.swift in Sources */,
 				0AA89E9D26F88331009104A8 /* LoginViewController.swift in Sources */,
 				0A82899E26FC7D130097D566 /* AddViewController.swift in Sources */,
 				0AA89E8D26F81CB7009104A8 /* ViewController.swift in Sources */,
@@ -463,6 +483,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A5A04F627036C82007CD70F /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A5A04F727036C82007CD70F /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A5A04F627036C82007CD70F /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AA89E7D26F81CB7009104A8 /* Project object */;
 }
