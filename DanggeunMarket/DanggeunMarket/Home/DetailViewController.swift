@@ -41,6 +41,7 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        setView()
     }
 
     func setView(){
@@ -87,12 +88,18 @@ class DetailViewController: UIViewController {
     
     func showAlert(style: UIAlertController.Style){
         let alert = UIAlertController()
-        let modify = UIAlertAction(title: "수정",style:.default) { (action) in
+        let modify = UIAlertAction(title: "수정",style:.default) { [self] (action) in
             print("수정")
+            guard let avc = self.storyboard?.instantiateViewController(identifier: "AddVC") as? AddViewController else { return }
+            avc.idx = index
+            self.navigationController?.pushViewController(avc, animated: true)
+            
         }
-        let delete = UIAlertAction(title:"삭제",style: .destructive) {
+        let delete = UIAlertAction(title:"삭제",style: .destructive) { [self]
             (action) in
             print("삭제")
+            p.productArray.remove(at: self.index)
+            self.navigationController?.popViewController(animated: true)
             
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)

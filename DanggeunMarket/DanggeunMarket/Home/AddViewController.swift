@@ -22,6 +22,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
     var cate: String = "카테고리 선택"
     let imagePicker = UIImagePickerController()
     
+    var idx = -1
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,19 +44,34 @@ class AddViewController: UIViewController, UITextViewDelegate{
         
         // info 행간
         makeSpace(tf: infoTextField)
-     
+
+        if idx != -1{
+            productImg.image = p.productArray[idx].productImage
+            titleTextField.text = p.productArray[idx].productTitle
+            priceTextField.text = String(p.productArray[idx].price)
+            infoTextField.text = p.productArray[idx].info
+            
+            infoTextField.textColor = .black
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         categoryBtn.setTitle(cate, for: .normal)
+        if idx != -1{
+            categoryBtn.setTitle(p.productArray[idx].category, for: .normal)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(categoryBtn.titleLabel?.text ?? " ")
+//        print(categoryBtn.titleLabel?.text ?? " ")
 
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        print(idx)
+        idx = -1
+    }
     // 사진 선택 버튼
     @IBAction func clickToSelectPhoto(_ sender: Any) {
         self.present(self.imagePicker, animated: true)
@@ -64,17 +80,21 @@ class AddViewController: UIViewController, UITextViewDelegate{
     
     // 완료 버튼
     @IBAction func completedAdd(_ sender: Any) {
-        p.productArray.insert(productInfo(id: userID, productImage: productImg.image!, productTitle: titleTextField.text ?? "0", price: Int(priceTextField.text!)!, location: location, info: infoTextField.text, category: cate), at: 0)
-    
+        if idx == -1{
+            p.productArray.insert(productInfo(id: userID, productImage: productImg.image!, productTitle: titleTextField.text ?? "0", price: Int(priceTextField.text!)!, location: location, info: infoTextField.text, category: cate), at: 0)
+        }
+        else{
+            p.productArray[idx] = productInfo(id: p.productArray[idx].id, productImage: productImg.image!, productTitle: titleTextField.text ?? "0", price: Int(priceTextField.text!)!, location: p.productArray[idx].location, info: infoTextField.text, category: (categoryBtn.titleLabel?.text)!)
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
     // 카테고리 선택
     @IBAction func clickToCategory(_ sender: Any) {
         guard let cvc = self.storyboard?.instantiateViewController(identifier: "CVC") as? CategoryViewController else { return }
-        cvc.completioHandler = {
+        cvc.completionHandler = {
             msg in
-//            print("messgae : \(msg)")
+            print("message : \(msg)")
             self.cate = msg
 
         }
@@ -136,7 +156,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 6
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+            .font: UIFont.systemFont(ofSize: 14, weight: .regular),
             .foregroundColor: UIColor.lightGray,
             .paragraphStyle: style
         ]
