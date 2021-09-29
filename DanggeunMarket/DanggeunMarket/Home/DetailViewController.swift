@@ -44,6 +44,16 @@ class DetailViewController: UIViewController {
         setView()
     }
 
+    // 공유하기 기능
+    @IBAction func shareContent(_ sender: Any) {
+        var sharedObject = [Any]()
+        sharedObject.append("이거 어때? " + titleLabel.text!)
+        let vc = UIActivityViewController(activityItems: sharedObject, applicationActivities: nil)
+        vc.popoverPresentationController?.permittedArrowDirections = []
+        vc.popoverPresentationController?.sourceView = self.view
+        self.present(vc, animated: true)
+
+    }
     func setView(){
         topView.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
         topView.layer.borderWidth = 0.3

@@ -1176,7 +1176,11 @@
                                     <action selector="clickActionSheet:" destination="qFj-F0-BF0" id="Xh7-dn-hvc"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="hc6-5R-yAz"/>
+                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="hc6-5R-yAz">
+                                <connections>
+                                    <action selector="shareContent:" destination="qFj-F0-BF0" id="Afj-HS-JTe"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1199"/>
