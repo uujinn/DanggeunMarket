@@ -21,7 +21,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // simulator를 위한 로그아웃
-        UserDefaultsKey.isLoggedIn = false
+//        UserDefaultsKey.isLoggedIn = false
 
         dropdownset()
         
