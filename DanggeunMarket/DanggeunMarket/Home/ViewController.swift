@@ -58,12 +58,11 @@ class ViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        print("viewwillAppear")
+//        print("viewwillAppear")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(p.productArray[0])
-        print("viewDidAppear")
+//        print("viewDidAppear")
 //        tableView.reloadData()
     }
 
