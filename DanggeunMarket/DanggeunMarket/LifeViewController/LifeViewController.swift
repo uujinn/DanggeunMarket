@@ -38,7 +38,7 @@ class LifeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 6
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: 17, weight: .regular),
+            .font: UIFont.systemFont(ofSize: 16, weight: .regular),
             .foregroundColor: UIColor.black,
             .paragraphStyle: style
         ]
