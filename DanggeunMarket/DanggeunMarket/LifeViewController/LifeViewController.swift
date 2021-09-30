@@ -26,6 +26,8 @@ class LifeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.separatorInset.left = -20
     }
     
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.contentArray.count
     }
@@ -33,7 +35,14 @@ class LifeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LifeTableViewCell", for: indexPath) as! LifeTableViewCell
         cell.contentlabel.text = contentArray[indexPath.row]
-
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 6
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 17, weight: .regular),
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: style
+        ]
+        cell.contentlabel.attributedText = NSAttributedString(string: contentArray[indexPath.row], attributes: attributes)
         return cell
     }
     
