@@ -19,19 +19,21 @@
 
 <img src = "https://user-images.githubusercontent.com/70887135/149168325-4314f311-af3e-45d5-a35d-ef46d387fa3e.gif" width="25%" height="25%">
 </br>
+
 ### 동네 생활
- - Dynamic TableView
 
 <img src = "https://user-images.githubusercontent.com/70887135/149168451-509a830f-8e6e-4beb-9067-944f5eb7a190.png" width="25%" height="25%">
 
 
 </br>
+
 ### 내 근처
  - [SkeletonView](https://github.com/Juanpe/SkeletonView)
 
 <img src = "https://user-images.githubusercontent.com/70887135/149168748-4c5521c1-7573-43f6-8b5a-b7033eee1787.gif" width="25%" height="25%">
 
 </br>
+
 ### 나의 당근 화면
 
 <img src = "https://user-images.githubusercontent.com/70887135/149169045-006c0ac0-c9ec-41b0-8c6e-08cbff20103e.png" width="25%" height="25%">
