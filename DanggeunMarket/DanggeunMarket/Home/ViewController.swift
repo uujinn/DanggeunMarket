@@ -58,6 +58,7 @@ class ViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        self.tableView.reloadData()
 //        print("viewwillAppear")
     }
     
@@ -131,6 +132,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         cell.productTitleLabel.text = p.productArray[indexPath.row].productTitle
         cell.locationLabel.text = p.productArray[indexPath.row].location
         cell.priceLabel.text = "\(p.productArray[indexPath.row].price)원"
+        
         
         return cell
     }

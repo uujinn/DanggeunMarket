@@ -108,6 +108,7 @@ class DetailViewController: UIViewController {
         let delete = UIAlertAction(title:"삭제",style: .destructive) { [self]
             (action) in
             print("삭제")
+            print(self.index)
             p.productArray.remove(at: self.index)
             self.navigationController?.popViewController(animated: true)
             
